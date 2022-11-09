@@ -1,0 +1,202 @@
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch (3-way-merge)
+$ cd rebase-branch
+bash: cd: rebase-branch: No such file or directory
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch (3-way-merge)
+$ cd rebase-branch
+bash: cd: rebase-branch: No such file or directory
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch (3-way-merge)
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Harshita/Zemoso-internship/git-katas/rebase-branch/exercise/.git/
+[master (root-commit) 060a20d] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: in the working copy of 'greeting.txt', LF will be replaced by CRLF the next time Git touches it
+[master 6365114] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+Switched to a new branch 'uppercase'
+warning: in the working copy of 'greeting.txt', LF will be replaced by CRLF the next time Git touches it
+[uppercase f105378] Change greeting to uppercase
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Switched to branch 'master'
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+[master 122f5f9] Add readme
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (master)
+$ git branch
+* master
+  uppercase
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (master)
+$ git log
+commit 122f5f96d417e4aa605f66abfcb62d9886c63c84 (HEAD -> master)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:10 2022 +0530
+
+    Add readme
+
+commit 6365114de63f2b6b745be0f5e1a24981700aa49e
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+    Add content to greeting.txt
+
+commit 060a20de95ea4b49b55243e79ce21b28e7783c26
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+    Add file greeting.txt
+:
+ter)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:10 2022 +0530
+
+    Add readme
+
+commit 6365114de63f2b6b745be0f5e1a24981700aa49e
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+    Add content to greeting.txt
+
+commit 060a20de95ea4b49b55243e79ce21b28e7783c26
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+    Add file greeting.txt
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (master)
+$ git branch
+* master
+  uppercase
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (master)
+$ git switch uppercase
+Switched to branch 'uppercase'
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (uppercase)
+$ git log
+commit f1053785c67333560728fb4ce4697d09e9796331 (HEAD -> uppercase)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+    Change greeting to uppercase
+
+commit 6365114de63f2b6b745be0f5e1a24981700aa49e
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+    Add content to greeting.txt
+
+commit 060a20de95ea4b49b55243e79ce21b28e7783c26
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (uppercase)
+$ cat greeting.txt
+HELLO
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (uppercase)
+$ git switch master
+Switched to branch 'master'
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (master)
+$ git switch uppercase
+Switched to branch 'uppercase'
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (uppercase)
+$ git reabse master
+git: 'reabse' is not a git command. See 'git --help'.
+
+The most similar command is
+        rebase
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (uppercase)
+$ git rebase master
+Successfully rebased and updated refs/heads/uppercase.
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (uppercase)
+$ git switch master
+Switched to branch 'master'
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (master)
+$ git merge uppercase
+Updating 122f5f9..fd80f41
+Fast-forward
+ greeting.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/rebase-branch/exercise (master)
+$ git log
+commit fd80f41926f49c9426108415fcc27ae0142de927 (HEAD -> master, uppercase)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+    Change greeting to uppercase
+
+commit 122f5f96d417e4aa605f66abfcb62d9886c63c84
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:10 2022 +0530
+
+    Add readme
+
+commit 6365114de63f2b6b745be0f5e1a24981700aa49e
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+:...skipping...
+commit fd80f41926f49c9426108415fcc27ae0142de927 (HEAD -> master, uppercase)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+    Change greeting to uppercase
+
+commit 122f5f96d417e4aa605f66abfcb62d9886c63c84
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:10 2022 +0530
+
+    Add readme
+
+commit 6365114de63f2b6b745be0f5e1a24981700aa49e
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+    Add content to greeting.txt
+
+commit 060a20de95ea4b49b55243e79ce21b28e7783c26
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 20:36:09 2022 +0530
+
+    Add file greeting.txt
+~

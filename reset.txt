@@ -1,0 +1,106 @@
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$ pwd
+/c/Users/Harshita/Zemoso-internship/git-katas/reset/exercise
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$ ls
+1.txt   2.txt  4.txt  6.txt  8.txt
+10.txt  3.txt  5.txt  7.txt  9.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$ git log
+commit bebc6ac15a09bcb20b79c6a3e2b9a20ccb9cf0fb (HEAD -> master)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:32:21 2022 +0530
+
+    10
+
+commit 25fa75bead451b109f7f24f12e1d10e0264f95d9
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:32:21 2022 +0530
+
+    9
+
+commit aa5cdf7dc816ed89545622a0b8256e0cb484e5d1
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:32:20 2022 +0530
+
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$ git reset --soft HEAD~1
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$ git log
+commit 25fa75bead451b109f7f24f12e1d10e0264f95d9 (HEAD -> master)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:32:21 2022 +0530
+
+    9
+
+commit aa5cdf7dc816ed89545622a0b8256e0cb484e5d1
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:32:20 2022 +0530
+
+    8
+
+commit 126472a53115163e8d3b94fa817514cf5a59484b
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:32:20 2022 +0530
+
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$ git reset --hard HEAD~1
+HEAD is now at aa5cdf7 8
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$ gi tlog
+bash: gi: command not found
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$ git log
+commit aa5cdf7dc816ed89545622a0b8256e0cb484e5d1 (HEAD -> master)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:32:20 2022 +0530
+
+    8
+
+commit 126472a53115163e8d3b94fa817514cf5a59484b
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:32:20 2022 +0530
+
+    7
+
+commit 49d5a7eb984a94f391ef6a56cd7e973f84d7c3c3
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:32:20 2022 +0530
+
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$ git revert HEAD~1
+[master 1c9a29f] Revert "7"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 7.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/reset/exercise (master)
+$ git log
+commit 1c9a29fffa5efab158152e2f0ad0a290d14df45c (HEAD -> master)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:39:38 2022 +0530
+
+    Revert "7"
+
+    This reverts commit 126472a53115163e8d3b94fa817514cf5a59484b.
+
+commit aa5cdf7dc816ed89545622a0b8256e0cb484e5d1
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:32:20 2022 +0530
+
+    8
+
+commit 126472a53115163e8d3b94fa817514cf5a59484b

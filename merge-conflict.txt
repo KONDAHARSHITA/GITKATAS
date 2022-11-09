@@ -1,0 +1,134 @@
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship
+$ cd git-katas
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas (3-way-merge)
+$ cd merge-conflict
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict (3-way-merge)
+$ source stup.sh
+bash: stup.sh: No such file or directory
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict (3-way-merge)
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Harshita/Zemoso-internship/git-katas/merge-conflict/exercise/.git/
+[master (root-commit) 4df4ed6] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: in the working copy of 'greeting.txt', LF will be replaced by CRLF the next time Git touches it
+[master 0649653] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+Switched to a new branch 'merge-conflict-branch1'
+warning: in the working copy of 'file.txt', LF will be replaced by CRLF the next time Git touches it
+[merge-conflict-branch1 d0e245f] add relevant fact
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+Switched to branch 'master'
+warning: in the working copy of 'file.txt', LF will be replaced by CRLF the next time Git touches it
+[master dbf0a6f] add indispensable truth!
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master)
+$ git branch
+* master
+  merge-conflict-branch1
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master)
+$ git merge merge-conflict-branch1
+Auto-merging file.txt
+CONFLICT (add/add): Merge conflict in file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master|MERGING)
+$ ls
+file.txt  greeting.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master|MERGING)
+$ cat file.txt
+<<<<<<< HEAD
+This is an indispensable truth!
+=======
+This is a relevant fact
+>>>>>>> merge-conflict-branch1
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master|MERGING)
+$ greeting.txt
+bash: greeting.txt: command not found
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master|MERGING)
+$ cat greeting.txt
+hello
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master|MERGING)
+$ vim file.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master|MERGING)
+$ git add .
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master|MERGING)
+$ git commit -m "resolved merge conflict"
+[master 2d0b2e3] resolved merge conflict
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master)
+$ git merge merge-conflict-branch1
+Already up to date.
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master)
+$ cat
+.git/         file.txt      greeting.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master)
+$ cat file.txt
+This is an indispensable truth!
+
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master)
+$ git log --online --graph
+fatal: unrecognized argument: --online
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master)
+$ git log --oneline --graph
+*   2d0b2e3 (HEAD -> master) resolved merge conflict
+|\
+| * d0e245f (merge-conflict-branch1) add relevant fact
+* | dbf0a6f add indispensable truth!
+|/
+* 0649653 Add content to greeting.txt
+* 4df4ed6 Add file greeting.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/merge-conflict/exercise (master)
+$ git branch
+* master
+  merge-conflict-branch1
+

@@ -1,0 +1,206 @@
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ git log
+commit 26d0478c76ca27f1ce047bf5fc7c7df3197505f5 (HEAD -> master)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:20:51 2022 +0530
+
+    Revert "Overwrite greeting.txt"
+
+    This reverts commit b7feb88da3bf00facd7ce65a2dfa69f85a284f1e.
+
+commit b7feb88da3bf00facd7ce65a2dfa69f85a284f1e
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Overwrite greeting.txt
+
+commit bb98b6ef998bf6c901192237c9826a84c3201e27
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Add content to greeting.txt
+
+commit 710fa7fac15ca558aefe4bde68b517f8d0a2a09f
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Add credentials to repository
+
+commit deed4ca60b2ec769735aab4ded5c2a7b3b1712d7
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ git log
+commit 26d0478c76ca27f1ce047bf5fc7c7df3197505f5 (HEAD -> master)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:20:51 2022 +0530
+
+    Revert "Overwrite greeting.txt"
+
+    This reverts commit b7feb88da3bf00facd7ce65a2dfa69f85a284f1e.
+
+commit b7feb88da3bf00facd7ce65a2dfa69f85a284f1e
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Overwrite greeting.txt
+
+commit bb98b6ef998bf6c901192237c9826a84c3201e27
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Add content to greeting.txt
+
+commit 710fa7fac15ca558aefe4bde68b517f8d0a2a09f
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Add credentials to repository
+
+commit deed4ca60b2ec769735aab4ded5c2a7b3b1712d7
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Add file greeting.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ cat greeting.txt
+Original file content
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ ls
+credentials.txt  greeting.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ git log --oneline
+26d0478 (HEAD -> master) Revert "Overwrite greeting.txt"
+b7feb88 Overwrite greeting.txt
+bb98b6e Add content to greeting.txt
+710fa7f Add credentials to repository
+deed4ca Add file greeting.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ git revert 710fa7f
+[master 0bc9b23] Revert "Add credentials to repository"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 credentials.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ git log --oneline
+0bc9b23 (HEAD -> master) Revert "Add credentials to repository"
+26d0478 Revert "Overwrite greeting.txt"
+b7feb88 Overwrite greeting.txt
+bb98b6e Add content to greeting.txt
+710fa7f Add credentials to repository
+deed4ca Add file greeting.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ ls
+greeting.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ git log
+commit 0bc9b2369e5aa45fb1d11c0f28b827e7d1b93b0c (HEAD -> master)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:25:08 2022 +0530
+
+    Revert "Add credentials to repository"
+
+    This reverts commit 710fa7fac15ca558aefe4bde68b517f8d0a2a09f.
+
+commit 26d0478c76ca27f1ce047bf5fc7c7df3197505f5
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:20:51 2022 +0530
+
+    Revert "Overwrite greeting.txt"
+
+    This reverts commit b7feb88da3bf00facd7ce65a2dfa69f85a28
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ git show
+commit 0bc9b2369e5aa45fb1d11c0f28b827e7d1b93b0c (HEAD -> master)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:25:08 2022 +0530
+
+    Revert "Add credentials to repository"
+
+    This reverts commit 710fa7fac15ca558aefe4bde68b517f8d0a2a09f.
+
+diff --git a/credentials.txt b/credentials.txt
+deleted file mode 100644
+index 8995708..0000000
+--- a/credentials.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-supersecretpassword
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ git show 710fa7fac15ca558aefe4bde68b517f8d0a2a09f.
+fatal: ambiguous argument '710fa7fac15ca558aefe4bde68b517f8d0a2a09f.': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ git log
+commit 0bc9b2369e5aa45fb1d11c0f28b827e7d1b93b0c (HEAD -> master)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:25:08 2022 +0530
+
+    Revert "Add credentials to repository"
+
+    This reverts commit 710fa7fac15ca558aefe4bde68b517f8d0a2a09f.
+
+commit 26d0478c76ca27f1ce047bf5fc7c7df3197505f5
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Wed Nov 9 21:20:51 2022 +0530
+
+    Revert "Overwrite greeting.txt"
+
+    This reverts commit b7feb88da3bf00facd7ce65a2dfa69f85a284f1e.
+
+commit b7feb88da3bf00facd7ce65a2dfa69f85a284f1e
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Overwrite greeting.txt
+
+commit bb98b6ef998bf6c901192237c9826a84c3201e27
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Add content to greeting.txt
+
+commit 710fa7fac15ca558aefe4bde68b517f8d0a2a09f
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Add credentials to repository
+
+commit deed4ca60b2ec769735aab4ded5c2a7b3b1712d7
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Add file greeting.txt
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$ git show  710fa7fac15ca558aefe4bde68b517f8d0a2a09f
+commit 710fa7fac15ca558aefe4bde68b517f8d0a2a09f
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Wed Nov 9 21:08:14 2022 +0530
+
+    Add credentials to repository
+
+diff --git a/credentials.txt b/credentials.txt
+new file mode 100644
+index 0000000..8995708
+--- /dev/null
++++ b/credentials.txt
+@@ -0,0 +1 @@
++supersecretpassword
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/basic-revert/exercise (master)
+$
