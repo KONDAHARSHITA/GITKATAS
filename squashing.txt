@@ -1,0 +1,26 @@
+$ cd git-katas
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas (3-way-merge)
+$ cd squashing
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/squashing (3-way-merge)
+$ source setup.sh
+[detached HEAD 27c0170] Add relevant fact
+ Date: Thu Nov 10 09:12:02 2022 +0530
+ 1 file changed, 5 insertions(+)
+ create mode 100644 file.txt
+Successfully rebased and updated refs/heads/master.
+
+Harshita@DESKTOP-3OFEE2E MINGW64 ~/Zemoso-internship/git-katas/squashing/exercise (master)
+$ git log
+commit 27c0170e17a436517b38e2725a70f89379816f34 (HEAD -> master)
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Thu Nov 10 09:12:02 2022 +0530
+
+    Add relevant fact
+
+commit 2f68e3117a7c44152f8af9537b1fa489bc0768ad
+Author: Harshita Konda <harshita.konda@zemosolabs.com>
+Date:   Thu Nov 10 09:12:01 2022 +0530
+
+    initial file
